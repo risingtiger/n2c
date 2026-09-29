@@ -1,0 +1,47 @@
+{
+  "INFO": {
+    "name": "INSTANCE_NAME",
+	"shortname": "xen",
+    "firebase": {
+      "project": "xenition",
+      "identity_platform_key": "AIzaSyDfXcwqyiRGGO6pMBsG8CvNEtDIhdspKRI",
+      "dbversion": 23
+    },
+    "localdb_objectstores": [
+		{"name": "areas", "indexes": ["ts"]}, 
+		{"name": "cats", "indexes": ["ts"]}, 
+		{"name": "sources", "indexes": ["ts"]}, 
+		{"name": "tags", "indexes": ["ts"]}, 
+		{"name": "payments", "indexes": ["ts"]}, 
+		{"name": "transactions", "indexes": ["cat", "source", "date", "ts"]} 
+    ]
+  },
+  "LAZYLOADS": [
+    {
+      "type":	  "view",
+      "urlmatch": "home",
+      "name":	  "home",
+      "is_instance": true,
+      "dependencies": [
+        {"type": "component", "name": "btn"},
+        {"type": "component", "name": "header"},
+        {"type": "component", "name": "ol2"},
+        {"type": "component", "name": "in2"}
+      ],
+      "auth": []
+    },
+    {
+      "type":	  "view",
+      "urlmatch": "car/:id",
+      "name":	  "car",
+      "is_instance": true,
+      "dependencies": [
+        {"type": "component", "name": "btn"},
+        {"type": "component", "name": "header"},
+        {"type": "component", "name": "ol2"},
+        {"type": "component", "name": "in2"}
+      ],
+      "auth": []
+    }
+  ]
+}

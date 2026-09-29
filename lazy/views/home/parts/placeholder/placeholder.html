@@ -1,0 +1,38 @@
+<div class="wrapper">
+	<form id="linkform" class="form" @submit="${(e)=>e.preventDefault()}">
+		<c-in2 label="URL" name="url" type="input" inputtype="url" val="${_m.form_link.url}"></c-in2>
+		<c-in2 label="Title" name="title" type="input" val="${_m.form_link.title}"></c-in2>
+		<c-in2 label="Description" name="description" type="textarea" rows="4" val="${_m.form_link.description}"></c-in2>
+		<c-in2 label="Date" name="date" type="input" inputtype="date" val="${this.date_input_value(_m.form_link.date)}"></c-in2>
+
+		<fieldset class="tag-options">
+			<legend>Tags</legend>
+			${_m.tags.map(tag => html`
+				<label>
+					<input
+						type="checkbox"
+						.checked=${_s.selected_tag_ids.includes(tag.id)}
+						@change="${(e)=>this.toggle_tag(tag.id, e)}"
+					>
+					<span>${tag.name || `Tag ${tag.id}`}</span>
+				</label>
+			`)}
+			${!_m.tags.length ? html`<p>No tags available.</p>` : ''}
+		</fieldset>
+
+		${_s.validation_errors.length ? html`
+			<div class="errors">
+				${_s.validation_errors.map(error => html`<p>${error}</p>`)}
+			</div>
+		` : ''}
+
+		<div class="btnrow">
+			${_s.mode === 'edit' ? html`
+				<c-btn type="button" @btnclick="${(e)=>this.delete_link(e)}">Delete</c-btn>
+			` : ''}
+			<span class="spacer"></span>
+			<c-btn type="button" noanime @btnclick="${(e)=>this.cancel(e)}">Cancel</c-btn>
+			<c-btn type="button" primary @btnclick="${(e)=>this.save_link(e)}">${_s.mode === 'edit' ? 'Save Bookmark' : 'Add Bookmark'}</c-btn>
+		</div>
+	</form>
+</div>

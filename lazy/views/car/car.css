@@ -1,0 +1,67 @@
+
+
+
+:host {
+	display: block;
+	min-height: 100vh;
+}
+
+.columns {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	min-height: 100vh;
+}
+
+.columns > section {
+	min-width: 0;
+	padding: 40px 0 0 0;
+}
+
+.columns > section.left {background: #f8f8f8;}
+.columns > section.middle {
+	background: #efefef;padding: var(--padding-container);
+
+	h1 {
+		font-size: 21px;
+		padding-bottom: 12px;
+	}
+	p {
+		padding-bottom: 12px;
+		font-size: 14px;
+		font-weight: 900;
+	}
+}
+.columns > section.right { 
+	background: #ffffff; 
+	padding: var(--padding-container);
+}
+
+ul.items {
+	--liheight: 42px;
+}
+ul.items > li {
+	background: transparent;
+}
+
+.car-name {
+	padding-left: 12px;
+}
+
+
+.car-color {
+	color: #666666;
+}
+
+.row-arrow {
+	flex: 0 0 30px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.count {
+	font-size: 96px;
+	font-weight: 700;
+	line-height: 1;
+	padding: 10px 0 0 24px;
+}
+

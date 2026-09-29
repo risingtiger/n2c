@@ -1,0 +1,31 @@
+{
+    "name": "Size Test",
+    "short_name": "st",
+    "description": "size test",
+    "theme_color": "#fff",
+    "background_color": "#fff",
+    "categories": ["business", "utilities"],
+	"lang": "en",
+	"dir": "ltr",
+	"icons": [
+		{
+			"purpose": "any",
+			"src": "/assets/instance/media/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		},
+		{
+			"purpose": "maskable",
+			"src": "/assets/instance/media/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		}
+	],
+    "scope": "/",
+    "start_url": "/",
+    "display": "standalone",
+    "display_override": ["standalone"],
+    "orientation": "any",
+	"launch_handler": { "client_mode": "navigate-existing" },
+    "version":"30"
+}

@@ -1,0 +1,20 @@
+
+
+<div class="columns">
+	<section class="left">
+		<ul class="items">
+			${_m.cars.map(this.carRow)}
+		</ul>
+	</section>
+	<section class="middle">
+		<h1>${_m.car.make} ${_m.car.model}</h1>
+		<p>Year: ${_m.car.year}</p>
+		<p>Color: ${_m.car.color}</p>
+	</section>
+	<section class="right">
+		<div class="count">${_m.cars.length}</div>
+	</section>
+</div>
+
+
+

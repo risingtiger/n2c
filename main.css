@@ -1,0 +1,31 @@
+
+:host {
+    --fontfamily: -apple-system, BlinkMacSystemFont, sans-serif;
+    --textcolor: #7d7d7d;
+    --textcolor-fade: #c9c9c9;
+    --textsize: 13px;
+    --actioncolor: #0091e8;
+    --errorcolor: red;
+    --background: white;
+    --background-highlight: #f7f7f7;
+    --bordercolor: #dddddd;
+    --padding-container: 10px;
+    --safetop: env(safe-area-inset-top, 0px);
+    --safetopplusesome: 6px;
+    --windowtop: calc(var(--safetop) + var(--safetopplusesome));
+    --viewheader-mobileheight: 34px;
+    --viewheader-desktopheight: 28px;
+}
+
+
+/* Keep class mappings in the view's core styles; the SVG definitions load separately. */
+i.icon-arrowright1 {
+	mask-image: var(--icon-arrowright1, var(--icon-placeholder));
+}
+
+i.icon-save {
+	mask-image: var(--icon-save, var(--icon-placeholder));
+}
+
+
+

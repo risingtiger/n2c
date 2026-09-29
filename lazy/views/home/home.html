@@ -1,0 +1,48 @@
+
+
+<div class="columns">
+	<section class="left">
+		<ul class="items">
+			${_m.cars.map(this.carRow)}
+		</ul>
+	</section>
+	<section class="middle">
+		<c-in2 label="Test A" name="test_a" type="input"></c-in2>
+		<c-in2 label="Test B" name="test_b" type="toggle" val="false"></c-in2>
+		<c-in2 label="Test C" name="test_c" type="select" options="Option 1:one,Option 2:two,Option 3:three" val="one"></c-in2>
+		<c-in2 label="Test D" name="test_d" type="textarea"></c-in2>
+		<c-in2 label="Test E" name="test_e" type="input" inputtype="number"></c-in2>
+	</section>
+	<section class="right">
+		<c-btn @click="${()=>this.open_overlay()}">Ya Man Wat up</c-btn>
+		<c-btn @click="${()=>this.open_overlay()}" primary>Ya Man Wat up</c-btn>
+
+		<br><br><br>
+		<div class="card">
+			<header>
+				<span class="avatar"><img src="https://i.pravatar.cc/80?img=12" alt="Jordan Hayes"></span>
+				<hgroup>
+					<h1>Jordan Hayes</h1>
+					<p>Operations Manager · Salt Lake City, UT</p>
+				</hgroup>
+			</header>
+			<section class="content">
+				<p>Jordan oversees fleet scheduling and maintenance for the western region, coordinating a team of twelve technicians across three service locations.</p>
+				<p>Currently focused on reducing vehicle downtime and rolling out the new inspection checklist.</p>
+			</section>
+			<footer>
+				<small>Joined March 2021 · Last active 2h ago</small>
+			</footer>
+		</div>
+	</section>
+</div>
+${_s.overlay_open ? html`
+	<c-ol2 title="Overlay" @close="${()=>this.close_overlay()}">
+		<p>hello overlay</p>
+	</c-ol2>
+` : ''}
+
+
+
+
+
